@@ -1,0 +1,16 @@
+.env
+.env.bak
+.env.key
+auth.json
+
+/vendor
+composer.lock
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+phpunit.xml
+.phpunit.result.cache

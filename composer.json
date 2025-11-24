@@ -1,0 +1,18 @@
+{
+    "name": "sitopapa/supenv",
+    "description": "A powerful, zero-dependency PHP Env Manager & Encrypter.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sitopapa\\Supenv\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/supenv"
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-sodium": "*"
+    }
+}
