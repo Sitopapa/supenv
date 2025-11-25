@@ -12,5 +12,6 @@ composer.lock
 Thumbs.db
 *.log
 
-phpunit.xml
 .phpunit.result.cache
+.phpunit.cache/
+/coverage

@@ -14,5 +14,19 @@
     "require": {
         "php": "^8.0",
         "ext-sodium": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sitopapa\\Supenv\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "supenv": "supenv",
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "test:filter": "phpunit --filter"
     }
 }

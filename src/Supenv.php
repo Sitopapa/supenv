@@ -4,6 +4,9 @@ namespace Sitopapa\Supenv;
 
 use Exception;
 use RuntimeException;
+use Sitopapa\Supenv\Exceptions\DecryptionException;
+use Sitopapa\Supenv\Exceptions\FileNotFoundException;
+use Sitopapa\Supenv\Exceptions\ValidationException;
 
 class Supenv
 {
@@ -133,7 +136,7 @@ class Supenv
         }
 
         if (!empty($missing)) {
-            throw new RuntimeException("Missing required env keys: " . implode(', ', $missing));
+            throw new ValidationException($missing);
         }
     }
 
@@ -189,8 +192,12 @@ class Supenv
 
     public function decrypt(string $inputFile, string $keyPath = '.env.key'): void
     {
-        if (!file_exists($inputFile) || !file_exists($keyPath)) {
-            throw new Exception("Files not found.");
+        if (!file_exists($inputFile)) {
+            throw new FileNotFoundException($inputFile);
+        }
+        
+        if (!file_exists($keyPath)) {
+            throw new FileNotFoundException($keyPath);
         }
 
         $key = base64_decode(trim(file_get_contents($keyPath)));
@@ -200,7 +207,9 @@ class Supenv
         $ciphertext = mb_substr($decoded, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES, null, '8bit');
 
         $plaintext = \sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
-        if ($plaintext === false) throw new Exception("Decryption failed.");
+        if ($plaintext === false) {
+            throw new DecryptionException("Decryption failed. Invalid key or corrupted data.");
+        }
 
         file_put_contents($this->filePath, $plaintext);
     }

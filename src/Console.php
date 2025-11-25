@@ -2,6 +2,8 @@
 
 namespace Sitopapa\Supenv;
 
+use Sitopapa\Supenv\Exceptions\SupenvException;
+
 class Console
 {
     public function handle(array $argv)
@@ -24,6 +26,9 @@ class Console
                 'validate' => $this->validateCommand($supenv),
                 default => $this->showHelp(),
             };
+        } catch (SupenvException $e) {
+            echo "\033[31mError:\033[0m " . $e->getMessage() . PHP_EOL;
+            exit(1);
         } catch (\Exception $e) {
             echo "\033[31mError:\033[0m " . $e->getMessage() . PHP_EOL;
             exit(1);
