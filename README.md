@@ -204,14 +204,6 @@ composer test:filter testEncryptionWorks
 
 ---
 
-## 📚 Documentation
-
-- [CHANGELOG.md](CHANGELOG.md) - Version history and changes
-- [ROADMAP.md](ROADMAP.md) - Planned features and improvements
-- [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) - Recent implementation details
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
