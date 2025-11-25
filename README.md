@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/sitopapa/supenv/workflows/Tests/badge.svg)](https://github.com/sitopapa/supenv/actions)
 [![Code Quality](https://github.com/sitopapa/supenv/workflows/Code%20Quality/badge.svg)](https://github.com/sitopapa/supenv/actions)
-[![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-blue.svg)](https://php.net)
+[![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-blue.svg)](https://php.net)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **Supenv** is a zero-dependency, production-ready tool to manage, secure, and validate your `.env` files. Use it as a robust **CLI Tool** or integrate it directly into your PHP application as a **Library**.
@@ -31,7 +31,7 @@ composer require sitopapa/supenv
 ```
 
 **Requirements:**
-- PHP 8.0 or higher
+- PHP 8.1 or higher
 - ext-sodium extension (usually enabled by default)
 
 ---
@@ -231,7 +231,7 @@ composer test:coverage
 
 Supenv uses GitHub Actions for automated testing:
 
-- ✅ Tests run on **PHP 8.0, 8.1, 8.2, 8.3**
+- ✅ Tests run on **PHP 8.1, 8.2, 8.3**
 - ✅ Cross-platform testing (**Ubuntu**, **Windows**, **macOS**)
 - ✅ Automatic code quality checks
 - ✅ Composer validation
