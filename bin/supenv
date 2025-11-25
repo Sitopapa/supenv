@@ -1,24 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-$autoloadPaths = [
-    __DIR__ . '/../../../autoload.php',
-    __DIR__ . '/../vendor/autoload.php',
-];
-
-$loaded = false;
-foreach ($autoloadPaths as $path) {
-    if (file_exists($path)) {
-        require $path;
-        $loaded = true;
-        break;
-    }
-}
-
-if (!$loaded) {
-    fwrite(STDERR, "You need to set up the project dependencies using Composer:\n\n    composer install\n\n");
-    exit(1);
-}
+require __DIR__ . '/../src/autoload.php';
 
 use Sitopapa\Supenv\Console;
 

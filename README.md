@@ -29,9 +29,11 @@ Supenv comes with a built-in terminal command.
 ```bash
 # Linux / Mac
 vendor/bin/supenv list
+vendor/bin/supenv help
 
 # Windows
 vendor\bin\supenv list
+vendor\bin\supenv help
 ```
 
 ### 2. Composer Script (Recommended)
@@ -45,6 +47,7 @@ Add this to your composer.json:
 Now run:
 ```bash
 composer supenv list
+composer supenv help
 ```
 
 ### CLI Commands
